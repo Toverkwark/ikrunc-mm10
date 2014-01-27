@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" 
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd"> <svg xmlns="http://www.w3.org/2000/svg" 
+xmlns:xlink="http://www.w3.org/1999/xlink" onload="init(evt)" width="1900">
+  <style>
+    .caption{font-size: 14px; font-family: Arial}
+    .tooltip{font-size: 12px; font-family: Arial}
+    .tooltip_bg{fill: white; stroke: black; stroke-width: 1; opacity: 0.85;}
+  </style>
+
+  <script type="text/ecmascript">
+    <![CDATA[
+
+	function init(evt) {
+	    if ( window.svgDocument == null ) {
+			svgDocument = evt.target.ownerDocument;
+	    }
+	    tooltip = svgDocument.getElementById('tooltip');
+	    tooltip_bg = svgDocument.getElementById('tooltip_bg');
+	}
+
+	function ShowTooltip(evt, mouseovertext) {
+	    tooltip.setAttributeNS(null,"x",evt.clientX+15);
+	    tooltip.setAttributeNS(null,"y",evt.clientY+30);
+	    tooltip.firstChild.data = mouseovertext;
+	    tooltip.setAttributeNS(null,"visibility","visible");
+	    length = tooltip.getComputedTextLength();
+	    tooltip_bg.setAttributeNS(null,"width",length+8);
+	    tooltip_bg.setAttributeNS(null,"x",evt.clientX+12);
+	    tooltip_bg.setAttributeNS(null,"y",evt.clientY+18);
+	    tooltip_bg.setAttributeNS(null,"visibility","visibile");
+	}
+
+	function HideTooltip(evt) {
+	    tooltip.setAttributeNS(null,"visibility","hidden");
+	    tooltip_bg.setAttributeNS(null,"visibility","hidden");
+	}
+    ]]>
+  </script>
+<defs>
+   <linearGradient id = "grad1" x1 = "0%" y1 = "0%" x2 = "0%" y2 = "100%">
+     <stop stop-color = "rgb(200,200,255)" offset = "0%"/>
+     <stop stop-color = "rgb(255,255,255)" offset = "50%"/>
+     <stop stop-color = "rgb(200,200,255)" offset = "100%"/>
+   </linearGradient>
+ </defs>

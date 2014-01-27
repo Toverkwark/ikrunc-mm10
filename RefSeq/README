@@ -1,0 +1,2 @@
+refGene.old is the original refGene.txt file as downloaded from ucsc.
+refGene.txt has been stripped of RefSeq IDs that are present more than once in the list
